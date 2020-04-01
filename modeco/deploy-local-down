@@ -6,17 +6,3 @@ prefix="package_$2"
 
 executionplane --silent docker container prune --force
 
-if [[ "package_confluent_cc_confluent_volume" == "$prefix"* ]] ; then
-		continue="true"
-		while [[ "true" == "$continue" ]] ;
-		do
-			executionplane docker volume rm "package_confluent_cc_confluent_volume"
-			result=
-			if [[ "$result" == "" ]] ; then
-				continue="false"
-			else
-				sleep 3;
-			fi
-		done;
-	fi
-	
