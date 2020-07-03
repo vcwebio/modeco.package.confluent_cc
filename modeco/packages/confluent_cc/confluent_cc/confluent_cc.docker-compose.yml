@@ -12,7 +12,7 @@ services:
     networks: [package_overlay]
     deploy:
       mode: replicated
-      replicas: ${CONFLUENT_CC_DEPLOY_REPLICAS}
+      ${CONFLUENT_CC_DEPLOY_MODE_REPLICATED_REPLICAS}
       resources:
         limits:
           cpus: '${CONFLUENT_CC_DEPLOY_RESOURCES_LIMITS_CPUS}'
@@ -22,7 +22,7 @@ services:
           memory: '${CONFLUENT_CC_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
       placement:
         constraints: [${CONFLUENT_CC_DEPLOY_PLACEMENT_CONSTRAINTS}]
-      labels: []
+      labels: [${CONFLUENT_CC_DEPLOY_LABELS}]
     labels: [${CONFLUENT_CC_LABELS}]
 # END SERVICE confluent_cc.base
 
