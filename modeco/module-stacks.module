@@ -1,2 +1,3 @@
 boot/shutdown,confluent_cc,confluent_cc,confluent_cc
+start/stop,confluent_cc,confluent_cc,confluent_cc_ui_controlcenter
 
